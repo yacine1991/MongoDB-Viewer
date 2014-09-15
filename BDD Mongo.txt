@@ -1,0 +1,344 @@
+db.Personne.insert(
+	{_id : '1',
+	type : 'Chargecours',
+	nompersonne : 'Cullot', 
+	prenompersonne : 'Nadine', 
+	titrepersonne : 'Professeur', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	domaine : 'informatique',
+	typecours : 'basededonnees',
+	campusid : 'c1'
+	})
+
+db.Personne.insert({
+	_id : '21',
+	type : 'Etudiant',
+	nompersonne : 'Salat', 
+	prenompersonne : 'Aurélie', 
+	titrepersonne : 'Etudiant', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	annee : '2012',
+	campusid : 'c1'
+	})
+
+db.Personne.insert({_id : '22',
+	type : 'Etudiant',
+	nompersonne : 'Prautois', 
+	prenompersonne : 'Mathieu', 
+	titrepersonne : 'Etudiant', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	annee : '2008',
+	campusid : 'c1'
+	})
+	
+db.Personne.insert({_id : '23',
+	type : 'Etudiant',
+	nompersonne : 'Simonot', 
+	prenompersonne : 'Jordan', 
+	titrepersonne : 'Etudiant', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	annee : '2009',
+	campusid : 'c1'
+	})
+	
+	db.Personne.insert({_id : '31',
+	type : 'Administrateur',
+	nompersonne : 'adminnom', 
+	prenompersonne : 'adminprenom', 
+	titrepersonne : 'Administrateur', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	titre : 'administrateur reseau',
+	comptinfo : '5',
+	compt-secret :'6',
+	campusid : 'c1'
+	})
+	
+	db.Personne.insert({_id : '41',
+	type : 'Technicien',
+	nompersonne : 'technom', 
+	prenompersonne : 'techprenom', 
+	titrepersonne : 'Technicien', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	titre : 'Technicien 1',
+	competence : 'competence technicien',
+	campusid : 'c1'
+	},
+	
+	db.Personne.insert({_id : '51',
+	type : 'Tuteur',
+	nompersonne : 'tuteurnom', 
+	prenompersonne : 'tuteurprenom', 
+	titrepersonne : 'Tuteur', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '0381800000', 
+	codepostalpersonne : '21000',
+	heures : 24,
+	tauxheure : 0.8,
+	campusid : 'c1'
+	}
+)
+db.Personne.insert(
+	{_id : '21000',
+	age : 18
+	})
+
+
+db.Personne.insert({_id : '2500',
+	type : 'Etudiant',
+	nompersonne : 'Boudabza', 
+	prenompersonne : 'Jalal', 
+	adressepersonne : 'Dijon', 
+	telephonepersonne : '118218', 
+	codepostalpersonne : '21000',
+	campusid : 'c2'
+	}
+)
+
+
+db.Campus.insert(
+	{_id : 'c1',
+	sitecampus : 'Site campus UB', 
+	adressecampus : 'Campus de Dijon ', 
+	telephone : '03812212121', 
+	fax : '0381212122', 
+	responsable : 'Responsable Campus UB'
+	}
+)
+
+db.Batiment.insert(
+	{_id : 'bat1',
+	nombatiment : 'Mirande', 
+	adresse : 'Dijon', 
+	telephone : '0381111111', 
+	niveau : '4',
+	campusid : 'c1',
+	ufrid : 'ufr1'
+	})
+	
+	db.Batiment.insert({_id : 'bat2',
+	nombatiment : 'Gabriel', 
+	adresse : 'Dijon', 
+	telephone : '0381111111', 
+	niveau : '4',
+	campusid : 'c1',
+	ufrid : 'ufr2',
+	ufrid : 'ufr3'
+	}
+)
+
+db.UFR.insert(
+	{_id : 'ufr1',
+	nomUFR : 'UFR Sciences et Techniques', 
+	doyenUFR : 'Thierry Grison', 
+	typeUFR : 'Sciences', 
+	departementUFR : 'Scientifique', 
+	centrerechercheUFR : 'Sciences',
+	batimentid :'bat1'
+	})
+	
+	db.UFR.insert({_id : 'ufr2',
+	nomUFR : 'UFR Droit et Sciences politiques', 
+	doyenUFR : 'Thierry Grison', 
+	typeUFR : 'Droit', 
+	departementUFR : 'Droit', 
+	centrerechercheUFR : 'Sciences politiques',
+	batimentid :'bat2'
+	})
+	
+	db.UFR.insert({_id : 'ufr3',
+	nomUFR : 'UFR Sciences humaines', 
+	doyenUFR : 'Thierry Grison', 
+	typeUFR : 'Sciences humaines', 
+	departementUFR : 'Sciences humaines', 
+	centrerechercheUFR : 'Sciences humaines',
+	batimentid :'bat2'
+	}
+)
+
+db.Bureau.insert(
+	{
+	numerobureau : 'G218', 
+	telephonebureau : '0381000218',
+	batimentid : 'bat1'
+	})
+	{
+	numerobureau : 'GS17', 
+	telephonebureau : '0381000218',
+	batimentid : 'bat1'
+	})
+	{
+	numerobureau : 'GS16', 
+	telephonebureau : '0381000218',
+	batimentid : 'bat1'
+	})
+	{
+	numerobureau : 'GS15', 
+	telephonebureau : '0381000218',
+	batimentid : 'bat1'
+	}
+)
+
+db.Classe.insert(
+	{
+	numeroclasse : 'B400', 
+	placesclasse : '40',
+	batimentid : 'bat1'
+	})
+	{
+	numeroclasse : 'B300', 
+	placesclasse : '40',
+	batimentid : 'bat1'
+	})
+	{
+	numeroclasse : 'A200', 
+	placesclasse : '40',
+	batimentid : 'bat1'
+	}
+)
+
+db.LabTP.insert(
+	{_id :'lab1',
+	numerolab : 'A103', 
+	placestp : '37', 
+	machinestp : '35',	
+	batimentid : 'bat1'
+	})
+	db.LabTP.insert({_id :'lab2',
+	numerolab : 'A104', 
+	placestp : '37', 
+	machinestp : '35',	
+	batimentid : 'bat1'
+	})
+	db.LabTP.insert({_id :'lab3',
+	numerolab : 'A105', 
+	placestp : '37', 
+	machinestp : '35',	
+	batimentid : 'bat1'
+	}
+)
+
+db.CentreRecherche.insert(
+	{_id : 'cr1',
+	nomcentrerecherche : 'Laboratoire Electronique, Informatique et Image', 
+	directeurcentrerecherche : 'Fabrice Meriaudeau', 
+	equipescentrerecherche : 'Checksem',
+	UFRid : 'ufr1'
+	}
+)
+
+db.Departement.insert(
+	{_id : 'dep1',
+	nomdepartement : 'departementinformatique', 
+	directeurdepartement : 'directeur departement informatique', 
+	profdepartement : 'professeur de departement',
+	UFRid : 'ufr1'
+	}
+)
+
+db.EcoleInstitut.insert(
+	{_id : 'ei1',
+	nomecoleinstitut : 'Ecole Superieur dIngenieurs de Recherche en Materiaux', 
+	directeurecoleinstitut : 'Pr. Gilles CABOCHE ', 
+	profecoleinstitut : 'professeur decole',
+	UFRid : 'ufr1'
+	})
+	
+	db.EcoleInstitut.insert({_id : 'ei2',
+	nomecoleinstitut : 'Insitut de la Vigne et du Vin Jules Guyot', 
+	directeurecoleinstitut : 'Michèle GUILLOUX-BENATIER ', 
+	profecoleinstitut : 'professeur decole',
+	UFRid : 'ufr1'
+	})
+	
+	db.EcoleInstitut.insert({_id : 'ei3',
+	nomecoleinstitut : 'Institut Universitaire de Technologie', 
+	directeurecoleinstitut : 'Jean-Michel LEFAURE', 
+	profecoleinstitut : 'professeur decole',
+	UFRid : 'ufr1'
+	}
+)
+
+db.Professeur.insert(
+	{_id : 'prf1',
+	nomprofesseur : 'Christophe Nicolle',
+	contact : 'christophe.nicolle@le2i.fr',
+	année : '2000'
+	})
+	
+	db.Professeur.insert({_id : 'prf2',
+	nomprofesseur : 'Kokou Yetongnon',
+	contact : 'Kokou.Yetongnon@le2i.fr',
+	année : '2002'
+	})
+	
+	db.Professeur.insert({_id : 'prf3',
+	nomprofesseur : 'Nadine Cullot',
+	contact : 'Nadine.Cullot@le2i.fr',
+	année : '2001'
+	}
+)
+
+db.Cours.insert(
+	{_id : 'cm1',
+	nomcours : 'Outils de lIntelligence Artificielle', 
+	creditcours : '6',
+	prerequiscours : 'L3'
+	})
+	
+	db.Cours.insert({_id : 'cm2',
+	nomcours : 'Systèmes Intelligents', 
+	creditcours : '6', 
+	prerequiscours : 'L3'
+	}) 
+	
+	db.Cours.insert({_id : 'cm3',
+	nomcours : 'Base de Donnees Multimedia', 
+	creditcours : '6', 
+	prerequiscours : 'L3'
+	})
+	
+	db.Cours.insert({_id : 'cm4',
+	nomcours : 'Base de Donnes et Environnements Distribues', 
+	creditcours : '6', 
+	prerequiscours : 'L3'
+	})
+	
+	db.Cours.insert({_id : 'cm5',
+	nomcours : 'Systeme d'Informations Oriente Objet', 
+	creditcours : '6', 
+	prerequiscours : 'L3'
+	}
+)
+
+db.Diplome.insert(
+	{_id : 'dip1',
+	nomdiplome : 'Maitrise STIC', 
+	nbanneesdiplome : '1', 
+	prerequis : 'Licence'
+	})
+	
+	db.Diplome.insert({_id : 'dip2',
+	nomdiplome : 'Licence STIC', 
+	nbanneesdiplome : '3', 
+	prerequis : 'L2'
+	})
+	
+	db.Diplome.insert({_id : 'dip3',
+	nomdiplome : 'Master Base de Donnees et Intelligence Artificielle', 
+	nbanneesdiplome : '1', 
+	prerequis : 'M1'
+	}
+)
+

@@ -1,0 +1,16 @@
+dans un premier terminal
+D:\mongodb\bin\mongod.exe --dbpath d:\mongodb\data
+
+
+
+dans un deuxieme
+D:\mongodb\bin\mongo.exe
+
+
+
+
+
+ex de requette : 
+db.Personne.find(
+    { campus_id: "campus1" }
+)

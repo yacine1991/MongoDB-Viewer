@@ -1,0 +1,50 @@
+db.Personne.insert( {
+    _id: 001,
+    type : 'Etudiant',    
+    nom: 'Maghezzi',
+    prenom : 'Yacine',
+    titre : 'Etudiant',
+	adresse : ' 29 chemin de palente ',
+	telephone :'0681224685',
+	code_postal : '25000',
+	annee : '2009',
+	campus_id : 'campus1'
+    
+ } ,
+ {
+ 
+    _id: 002,
+    type : 'Etudiant',    
+    nom: 'Boudabza',
+    prenom : 'Jallal',
+    titre : 'Etudiant',
+	adresse : ' 29 rue StApo',
+	telephone : '0725458985',
+	code_postal : '21830',
+	annee : '2009',
+	campus_id : 'campus1'
+ },
+  { 
+    _id: 003,
+    type : 'Administrateur',    
+    nom: 'Assad',
+    prenom : 'Salah',
+    titre : 'chargé de batiment',
+	adresse : ' 28 rue 30 octobre ',
+	telephone : '070000000',
+	code_postal : "21000",
+	Comp_Info: 2,
+	Comp_Secret:3,
+	campus_id : 'campus1'
+ 
+ } )
+db.Campus.insert(
+ {
+    _id: 'campus1',
+    SiteCampus : 'Etudiant',    
+    AdresseCampus: 'Boudabza',
+    Telephone : 'Jallal',
+    Fax : 'Etudiant',
+	Responsable_id : ' 003 ',
+ }
+ )

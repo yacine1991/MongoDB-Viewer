@@ -16,6 +16,8 @@ Every docs (analysis, presentation, reports can be find in /docs )
 Feel free to use it !
 
 Contact : yacine1991@gmail.com
+Yacine Maghezzi
+
 
 https://www.linkedin.com/pub/yacine-ma/2a/822/83
 

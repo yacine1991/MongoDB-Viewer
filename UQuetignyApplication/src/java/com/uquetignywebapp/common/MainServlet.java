@@ -9,12 +9,16 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.uquetignywebapp.connection.ConnectionMongoDB;
+import com.uquetignywebapp.connection.ConnectionPostgresDB;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -22,6 +26,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -40,7 +45,7 @@ public class MainServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, UnknownHostException, SQLException {
         System.out.println("Processrequest");
         String type = request.getParameter("choice");
 
@@ -48,8 +53,8 @@ public class MainServlet extends HttpServlet {
         }
         String url = null;
 
-        ArrayList<String> col = new ArrayList<String>();
-        ArrayList<String> colDbGeneral = new ArrayList<String>();
+        ArrayList<String> col = new ArrayList<>();
+        ArrayList<String> colDbGeneral = new ArrayList<>();
         colDbGeneral = getCollections(colDbGeneral);
         if (type.equals("displayDB")) {
             url = "/dbViewer.jsp";
@@ -107,7 +112,7 @@ public class MainServlet extends HttpServlet {
         DBCollection t = getSpecificCollection(nomdeTable);
         ArrayList<Map> test2 = fillSpecificCollection(t);
         Set s = test2.get(numdetuple).keySet();
-        ArrayList<String> s2 = new ArrayList<String>(s);
+        ArrayList<String> s2 = new ArrayList<>(s);
         return s2;
         
     }
@@ -122,18 +127,16 @@ public class MainServlet extends HttpServlet {
 
 
     public ArrayList<Map> fillSpecificCollection(DBCollection ObjectsOfCollection) {
-        ArrayList<Map> objectData = new ArrayList<Map>();
-        DBCursor dbcur = ObjectsOfCollection.find();
-        int i = 0;
-        while (dbcur.hasNext()) {
-            objectData.add(ObjectsOfCollection.find().toArray().get(i).toMap());
-            dbcur.next();
-            i++;
+        ArrayList<Map> objectData = new ArrayList<>();
+        try (DBCursor dbcur = ObjectsOfCollection.find()) {
+            int i = 0;
+            while (dbcur.hasNext()) {
+                objectData.add(ObjectsOfCollection.find().toArray().get(i).toMap());
+                dbcur.next();
+                i++;
+            }
         }
-
-        dbcur.close();
-        
-        return objectData;
+              return objectData;
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
@@ -147,8 +150,12 @@ public class MainServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException, UnknownHostException {
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -161,8 +168,12 @@ public class MainServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException, UnknownHostException {
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

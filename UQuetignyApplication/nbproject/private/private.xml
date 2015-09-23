@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/src/java/com/uquetignywebapp/data/Personne.java</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/src/java/com/uquetignywebapp/common/MainServlet.java</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/src/java/com/uquetignywebapp/data/ListePersonne.java</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/web/personneViewer.jsp</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/web/dbViewer.jsp</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/web/genericPage.jsp</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/nbproject/build-impl.xml</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/src/java/com/uquetignywebapp/connection/ConnectionPostgresDB.java</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/src/java/com/uquetignywebapp/connection/ConnectionMongoDB.java</file>
+            <file>file:/Users/yacinemaghezzi/netbeansprojects/MongoDB-Viewer/UQuetignyApplication/web/index.jsp</file>
+        </group>
     </open-files>
 </project-private>
